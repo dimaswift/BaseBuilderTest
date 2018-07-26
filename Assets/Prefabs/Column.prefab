@@ -19,9 +19,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4977216701796320}
-  - component: {fileID: 114669063868175222}
   - component: {fileID: 54679971536926784}
   - component: {fileID: 65054713640540928}
+  - component: {fileID: 114420893102159956}
   m_Layer: 0
   m_Name: Column
   m_TagString: Untagged
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   supportedTypes:
   - {fileID: 11400000, guid: 33d8ea46e5759b14cb7922918ab70bc9, type: 2}
---- !u!114 &114669063868175222
+--- !u!114 &114420893102159956
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1426863661359660}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2531a1f460b16614aab094568c0f4162, type: 3}
+  m_Script: {fileID: 11500000, guid: cfc5a2cbe66c0214a85da2177396fb2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   canBePlacedOnTheGround: 0

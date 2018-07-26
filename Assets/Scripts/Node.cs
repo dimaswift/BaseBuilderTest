@@ -2,11 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-/// <summary>
-/// Represents a building piece, with sockets and plugs.
-/// Socket is the point where other nodes can be connected to.
-/// Plug is the pivot point of specific node type
-/// </summary>
+
 public class Node : MonoBehaviour
 {
     public bool canBePlacedOnTheGround;

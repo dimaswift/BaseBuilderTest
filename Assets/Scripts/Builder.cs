@@ -152,20 +152,22 @@ public class Builder : MonoBehaviour
     /// <summary>
     /// Checks if current node position overlaps with other nodes and returns the node overlapped
     /// </summary>
-    /// <param name="Node"></param>
+    /// <param name="node"></param>
     /// <param name="other"></param>
     /// <returns></returns>
-    bool IsOverlappingOtherNodes(Node Node, out Node other)
+    bool IsOverlappingOtherNodes(Node node, out Node other)
     {
         // store every collider overlapping with boundCollider of the Node in the colliderBuffer array, and return number of overlaps (includes current Node)
-        var hits = Physics.OverlapBoxNonAlloc(Node.transform.position + Node.boundsCollider.center, (Node.boundsCollider.size / 2) * .95f, colliderBuffer);
+        var center = node.transform.position + node.boundsCollider.center;
+        var size = (node.boundsCollider.size / 2) * .95f;
+        var hits = Physics.OverlapBoxNonAlloc(center, size, colliderBuffer, node.transform.rotation);
         if(hits > 0)
         {
             for (int i = 0; i < hits; i++)
             {
                 var coll = colliderBuffer[i];
                 // return false if bounding box overlaps with other Node
-                if(coll != Node.boundsCollider && coll.CompareTag(GROUND_TAG) == false)
+                if(coll != node.boundsCollider && coll.CompareTag(GROUND_TAG) == false)
                 {
                     other = coll.GetComponent<Node>();
                     return true;
@@ -181,17 +183,18 @@ public class Builder : MonoBehaviour
     /// </summary>
     /// <param name="Node"></param>
     /// <returns></returns>
-    bool IsOverlappingOtherNodes(Node Node)
+    bool IsOverlappingOtherNodes(Node node)
     {
-        // store every collider overlapping with boundCollider of the Node in the colliderBuffer array, and return number of overlaps (includes current Node)
-        var hits = Physics.OverlapBoxNonAlloc(Node.transform.position + Node.boundsCollider.center, (Node.boundsCollider.size / 2) * .95f, colliderBuffer, Node.transform.rotation);
+        var center = node.transform.position + node.boundsCollider.center;
+        var size = (node.boundsCollider.size / 2) * .95f;
+        var hits = Physics.OverlapBoxNonAlloc(center, size, colliderBuffer, node.transform.rotation);
         if (hits > 0)
         {
             for (int i = 0; i < hits; i++)
             {
                 var coll = colliderBuffer[i];
                 // return false if bounding box overlaps with other Node
-                if (coll != Node.boundsCollider && coll.CompareTag(GROUND_TAG) == false)
+                if (coll != node.boundsCollider && coll.CompareTag(GROUND_TAG) == false)
                 {
                     return true;
                 }

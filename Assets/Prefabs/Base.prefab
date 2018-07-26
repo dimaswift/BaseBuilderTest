@@ -99,9 +99,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4490339737240112}
-  - component: {fileID: 114435965417393294}
   - component: {fileID: 54052148991867712}
   - component: {fileID: 65850893844135046}
+  - component: {fileID: 114594034500983158}
   m_Layer: 0
   m_Name: Base
   m_TagString: Untagged
@@ -549,26 +549,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: {fileID: 11400000, guid: 33d8ea46e5759b14cb7922918ab70bc9, type: 2}
---- !u!114 &114435965417393294
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1621744849344936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2531a1f460b16614aab094568c0f4162, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canBePlacedOnTheGround: 1
-  type: {fileID: 11400000, guid: 33d8ea46e5759b14cb7922918ab70bc9, type: 2}
-  boundsCollider: {fileID: 65850893844135046}
-  regularState:
-    material: {fileID: 2100000, guid: 6b1b7301f9519ff4288a98ad9264016a, type: 2}
-  readyToBuildState:
-    material: {fileID: 2100000, guid: 32050b1e48a972e4994a3952b4b612de, type: 2}
-  notReadyToBuildState:
-    material: {fileID: 2100000, guid: ba628a31fc122e94f8feb121daa3ed56, type: 2}
 --- !u!114 &114499944219117558
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -594,6 +574,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: {fileID: 11400000, guid: f6468efc95d71f54fb48f8b904a691d4, type: 2}
+--- !u!114 &114594034500983158
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1621744849344936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfc5a2cbe66c0214a85da2177396fb2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canBePlacedOnTheGround: 1
+  type: {fileID: 11400000, guid: 33d8ea46e5759b14cb7922918ab70bc9, type: 2}
+  boundsCollider: {fileID: 65850893844135046}
+  regularState:
+    material: {fileID: 2100000, guid: 6b1b7301f9519ff4288a98ad9264016a, type: 2}
+  readyToBuildState:
+    material: {fileID: 2100000, guid: 32050b1e48a972e4994a3952b4b612de, type: 2}
+  notReadyToBuildState:
+    material: {fileID: 2100000, guid: ba628a31fc122e94f8feb121daa3ed56, type: 2}
 --- !u!114 &114660105742072968
 MonoBehaviour:
   m_ObjectHideFlags: 1
