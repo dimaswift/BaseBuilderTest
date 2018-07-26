@@ -16,7 +16,6 @@ public class CharacterMover : MonoBehaviour
 
     public new Transform transform { get; private set; }
 
-    float yVelocity;
     Rigidbody body;
     Vector3 previousVelocity;
     bool isGrounded;
@@ -33,7 +32,7 @@ public class CharacterMover : MonoBehaviour
     public void Jump()
     {
         if(isGrounded)
-            yVelocity = jumpForce;
+            body.velocity += Vector3.up * jumpForce;
     }
 
     private void FixedUpdate()
@@ -46,10 +45,8 @@ public class CharacterMover : MonoBehaviour
     /// </summary>
     void ProcessMovement()
     {
-
-        yVelocity += Physics.gravity.y * Time.fixedDeltaTime; // pules player down according to gravity
         var newVel = transform.TransformDirection(MovementDirection.normalized) * speed; 
-        newVel.y = yVelocity;
+        newVel.y = body.velocity.y;
         body.velocity = newVel;
         
     }

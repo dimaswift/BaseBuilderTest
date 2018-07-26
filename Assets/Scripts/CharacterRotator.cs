@@ -5,7 +5,7 @@ using UnityEngine;
 public class CharacterRotator : MonoBehaviour
 {
     public float sensitivity = 5;
-
+    public float smoothTime = 1;
     public float minX = -360F;
     public float maxX = 360F;
 
@@ -24,7 +24,6 @@ public class CharacterRotator : MonoBehaviour
         originalRotation = transform.localRotation;
     }
 
-
     /// <summary>
     /// Rotates rigidbody using delta. Delta is a pointer position delta on screen. Should be called from FixedUpdate
     /// </summary>
@@ -38,8 +37,8 @@ public class CharacterRotator : MonoBehaviour
 
         Quaternion yQuaternion = Quaternion.AngleAxis(rotationAxis.y, Vector3.left);
         Quaternion xQuaternion = Quaternion.AngleAxis(rotationAxis.x, Vector3.up);
-
-        body.MoveRotation(originalRotation * xQuaternion * yQuaternion);
+        var finalRot = Quaternion.Lerp(body.rotation, originalRotation * xQuaternion * yQuaternion, smoothTime * Time.fixedDeltaTime);
+        body.MoveRotation(finalRot);
         body.angularVelocity = Vector3.zero;
     }
 
